@@ -1,0 +1,27 @@
+model:
+  checkpoint_path: "..."
+  stage: "both_encoders"  # Options: pooler_only, top_layers, full_encoder, text_vision_v1, both_encoders
+  num_top_layers: 2      # Only relevant for 'top_layers' stage
+  image_size: 224
+  embedding_dim: 512
+
+data:
+  train_images_dir: "..."
+  train_annotations: "..."
+  val_images_dir: "..."
+  val_annotations: "..."
+  class_names: ['inflammatory', 'connective', 'necrosis', 'epithelial']
+
+training:
+  batch_size: 32
+  num_epochs: 100
+  learning_rate: 1.0e-5
+  weight_decay: 0.05
+  patience: 20
+  num_workers: 4
+  device: "cuda"
+  
+logging:
+  project_name: "conch_finetunning"
+  experiment_name: "..."
+  experiments_dir: "..."

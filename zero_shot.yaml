@@ -1,0 +1,16 @@
+# Configuration for zero-shot evaluation (example for Puma inflammatory cells)
+device: "cuda"
+batch_size: 32
+num_workers: 4
+
+data:
+  dataset: "puma"
+  annotations_path: "..."  
+  images_dir: "..."     
+  descriptions_file: "data/descriptions/puma_inflammatory_descriptions.json"  
+  class_names: ['lymphocyte', 'neutrophil', 'histiocyte', 'plasma_cell', 'melanophage'] #inflammatory classes from PUMA to be used for zero-shot
+
+model:
+  conch_path: "..." #path to conch model
+  fine_tuned_checkpoint: "..." #path to fine-tuned checkpoint
+  image_size: 224
