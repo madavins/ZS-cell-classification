@@ -10,7 +10,7 @@ tqdm
 PyYAML
 h5py
 typing-extensions
-conch @ git+https://github.com/Mahmoodlab/CONCH.git@02d6ac59cc20874bff0f581de258c2b257f69a84#egg=conch
+conch @ git+https://github.com/Mahmoodlab/CONCH.git
 openai>=1.0.0
 requests
 filelock
