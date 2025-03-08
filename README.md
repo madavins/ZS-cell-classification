@@ -53,8 +53,13 @@ This project uses the PanNuke and PUMA datasets.
 3.  **Create cell centered crops:** Use the `prepare_crops.py` script to extract 112x112 pixel crops centered on each cell nucleus from PanNuke or PUMA patches.
 
     ```bash
-    python data/prepare_crops.py --input_folder data/pannuke --output_folder data/pannuke_crops
-    python data/prepare_crops.py --input_folder data/puma --output_folder data/puma_crops
+    python data/prepare_crops.py \
+        --input_folder data/pannuke \
+        --output_folder data/pannuke_crops 
+
+    python data/prepare_crops.py \
+        --input_folder data/puma \
+        --output_folder data/puma_crops
     ```
 
 4.  **(Optional - for fine-tuning) Generate fine-tuning dataset:**  This step requires an OpenAI API key. Set the `OPENAI_API_KEY` environment variable, and then run the `dataset_processor.py` script:
@@ -86,7 +91,10 @@ To perform zero-shot cell classification, use the `zero_shot.py` script and the 
 2.  **Run the evaluation:**
 
     ```bash
-    python zero_shot.py --config zero_shot.yaml --experiment_name <your_experiment_name> --output_dir <your_output_directory>
+    python zero_shot.py \
+        --config zero_shot.yaml \
+        --experiment_name <your_experiment_name> \
+        --output_dir <your_output_directory>
     ```
 
     *   `--config`: Specifies the configuration file.
