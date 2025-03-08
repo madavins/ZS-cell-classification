@@ -6,7 +6,7 @@ This project explores the application of the CONCH vision-language model to perf
 
 Histopathology, the microscopic examination of tissue, is crucial for diagnosing diseases like cancer.  Identifying and classifying individual cells within tissue samples is a fundamental task, but it's traditionally labor-intensive and requires expert pathologists.  Deep learning offers promising solutions, but these models typically require vast amounts of labeled data, which are expensive and time-consuming to acquire.
 
-In this research we investigate a **zero-shot learning** approach using [CONCH (Contrastive Learning from Captions for Histopathology)](https://github.com/Mahmoodlab/CONCH), a vision-language model pre-trained on a large dataset of histopathology image-caption pairs.  We evaluate whether CONCH, without any *cell-specific* training, can accurately classify individual cells based solely on textual descriptions of their morphological features. We also explore **fine-tuning** strategies to improve performance. We use the PanNuke and PUMA datasets for evaluation and inflammatory cell sub-classification, respectively.
+In this research we investigate a **zero-shot learning** approach using [CONCH (Contrastive Learning from Captions for Histopathology)](https://github.com/Mahmoodlab/CONCH), a vision-language model pre-trained on a large dataset of histopathology image-caption pairs.  We evaluate whether CONCH, without any *cell-specific* training, can accurately classify individual cells based solely on textual descriptions of their morphological features. We also explore **fine-tuning** strategies to improve performance. We use the [PanNuke](https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke) and [PUMA](https://puma.grand-challenge.org/dataset/) for evaluation and inflammatory cell sub-classification, respectively.
 
 ## Installation
 
@@ -69,6 +69,8 @@ This project uses the PanNuke and PUMA datasets.
     ```
     **Note:** This step uses the OpenAI API and will incur costs.
 
+    ![Diagram of the fine-tuning dataset creation pipeline.](images/ft-dataset-pipeline.png){: style="display:block; margin-left:auto; margin-right:auto; width:90%;"}
+
 ## Usage
 
 ### Zero-shot classification
@@ -86,6 +88,8 @@ To perform zero-shot cell classification, use the `zero_shot.py` script and the 
     *   `--config`: Specifies the configuration file.
     *   `--experiment_name`:  A name for your experiment (used for output file naming).
     *   `--output_dir`:  The directory where results (JSON file and confusion matrix) will be saved.
+
+![Diagram of the zero-shot classification process.](images/zs_cell-classification.png){: style="display:block; margin-left:auto; margin-right:auto; width:65%;"}
 
 ### Fine-tuning
 
