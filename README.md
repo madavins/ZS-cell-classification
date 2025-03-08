@@ -66,7 +66,7 @@ This project uses the PanNuke and PUMA datasets.
 
     ```bash
     export OPENAI_API_KEY="your_openai_api_key"
-    python openai_api/dataset_processor.py \
+    python cell_description_generation/dataset_processor.py \
         data/pannuke_crops/annotations.json \
         data/pannuke_crops/images \
         data/pannuke_crops/subset_annotations.json \
