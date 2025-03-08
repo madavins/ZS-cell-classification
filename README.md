@@ -69,7 +69,10 @@ This project uses the PanNuke and PUMA datasets.
     ```
     **Note:** This step uses the OpenAI API and will incur costs.
 
-    ![Diagram of the fine-tuning dataset creation pipeline.](images/ft-dataset-pipeline.png){: style="display:block; margin-left:auto; margin-right:auto; width:90%;"}
+    <div align="center">
+        <img src="images/ft-dataset-pipeline.png" width="90%" alt="Fine-tuning dataset pipeline"/>
+        <p><em>Pipeline for creating the fine-tuning dataset. The process involves selecting a subset of cell images, generating descriptions using GPT-4, and creating image-text pairs for model fine-tuning.</em></p>
+    </div>
 
 ## Usage
 
@@ -89,7 +92,10 @@ To perform zero-shot cell classification, use the `zero_shot.py` script and the 
     *   `--experiment_name`:  A name for your experiment (used for output file naming).
     *   `--output_dir`:  The directory where results (JSON file and confusion matrix) will be saved.
 
-![Diagram of the zero-shot classification process.](images/zs_cell-classification.png){: style="display:block; margin-left:auto; margin-right:auto; width:65%;"}
+    <div align="center">
+        <img src="images/zs_cell-classification.png" width="50%" alt="Zero-shot classification process"/>
+        <p><em>Overview of the zero-shot cell classification process. The CONCH model compares cell image embeddings with text embeddings of cell descriptions to perform classification without cell-specific training.</em></p>
+    </div>
 
 ### Fine-tuning
 
